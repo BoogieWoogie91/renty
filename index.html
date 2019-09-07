@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Style.CSS-->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <title>Renty</title>
+  </head>
+  <body>
+    <header>
+      <div id='contacts' class='contacts'>
+        <div class='content_1030'>
+          <div class='socialMediaWrap'>
+            <div class='socialMedia'>
+              <a href='#'><img src='img/facebook.svg'></a>
+              <a href='#'><img src='img/vk.svg'></a>
+              <a href='#'><img src='img/whatsapp.svg'></a>
+              <a href='#'><img src='img/telegram.svg'></a>              
+              <a href='#'><img src='img/instagram.svg'></a>
+              <a href='#'><img src='img/Yandex_Zen_Logo.svg'></a>
+            </div>
+          </div>
+
+          <div class='phoneAndMail'>
+            <p class='phone'>+7 495 740 90 78</p>
+            <p class='email'>support@renty.me</p>
+          </div>
+        </div>
+      </div>
+
+      <div id='mainHeader' class='mainHeader'>
+        <div class='content_1030'>          
+          <div class='logoWrap'>
+            <div id='burgerButton' class='burgerWrap' onclick="openBurgerButton()">
+              <div class='burgerLine'></div>
+            </div>
+            <a href='index.html'><img id='logoImg' class='logoImg' src='img/Renty_logo.svg' alt='logo'></a>            
+          </div>
+
+          <div class='rentButtons' id='rentButtons'>
+            <button id='giveRent' class='giveRent activeButton' onclick="giveRentButton()">Сдать</button>
+            <button id='takeRent' class='takeRent' onclick="takeRentButton()">Снять</button>
+          </div>
+
+          <div class='anchors'>            
+            <a href='#aboutUs'>Управляем</a>
+            <a href='#weConsult'>Консультируем</a>
+            <a href='#helpWithPapers'>Помогаем с оформлением</a>
+            <a href='#'>Блог</a>
+          </div>
+
+          <button class='enterPersonal'>Личный кабинет</button>
+
+          <div id='socialMediaButton' class='socialMediaButton'  onclick="openSocialMediaButton()">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+              <g>
+                <g id="messenger">
+                  <path d="M459,0H51C22.95,0,0,22.95,0,51v459l102-102h357c28.05,0,51-22.95,51-51V51C510,22.95,487.05,0,459,0z"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class='burgerPopUp' id='burgerPopUp'>
+      <div class='height_148px'></div>
+      <div class='popUpAnchors'>        
+        <a class='burgerAnchor' href='#aboutUs' onclick="closeBurgerPopUp ()">Управляем</a>
+        <a class='burgerAnchor' href='#weConsult' onclick="closeBurgerPopUp ()">Консультируем</a>
+        <a class='burgerAnchor' href='#helpWithPapers' onclick="closeBurgerPopUp ()">Помогаем с оформлением</a>
+        <a class='burgerAnchor' href='#articlesAboutUs' class='lastAnchor' onclick="closeBurgerPopUp ()">Блог</a>
+
+        <button class='enterPersonal'>Личный кабинет</button>
+
+        <p class='phone'>+7 495 740 90 78</p>
+        <p class='email'>info@mail.ru</p>
+      </div>     
+    </div>
+
+    <div class='socialMediaPopUp' id='socialMediaPopUp'>
+      <div class='height_148px'></div>
+      <div class='socialMediaAnchors'>
+        <a href='#'>          
+            <img src='img/facebook.svg'>
+            <p class='socialMediaP'>Facebook</p>          
+        </a>
+
+        <a href='#'>          
+            <img src='img/vk.svg'>
+            <p class='socialMediaP'>VK</p>         
+        </a>
+
+        <a href='#'>          
+            <img src='img/whatsapp.svg'>
+            <p class='socialMediaP'>Whatsapp</p>          
+        </a>
+
+        <a href='#'>          
+            <img src='img/telegram.svg'>
+            <p class='socialMediaP'>Telegram</p>          
+        </a>
+
+        <a href='#'>          
+            <img src='img/instagram.svg'>
+            <p class='socialMediaP'>Instagram</p>          
+        </a>
+
+        <a href='#'>          
+            <img src='img/Yandex_Zen_Logo.svg'>
+            <p class='socialMediaP'>Яндекс.Дзен</p>          
+        </a>
+
+        <button class='enterPersonal'>Личный кабинет</button>
+
+        <p class='phone'>+7 495 740 90 78</p>
+        <p class='email'>info@mail.ru</p>
+      </div>
+    </div>
+
+    <div class='giveRentPopUp' id='giveRentPopUp'>
+      <div class='height_148px'></div>
+      <div class='formWrapper'>
+
+        <div class='closeFromButton' id='closeFromButton' onclick="closeGiveFormButton();">
+          <div class='closeLineBefore'></div>
+          <div class='closeLineAfter'></div>
+        </div>
+        <h4>Сдать недвижимость</h4>
+        <div class='formWrap'>
+          <form id=giveRentPopUpForm>
+            <h6>Информация о недвижимости</h6>              
+            <select id='giveRentPopUpSelect'>
+              <option>Выберите тип</option>
+              <option>Комната</option>
+              <option>Квартира</option>
+              <option>Мини-отель</option>
+            </select>
+
+            <input type='text' placeholder='Адрес недвижимости' id='giveRentPopUpAdress'>
+
+            <h6 class='personalInformH'>Личная информация</h6>
+            <input id='giveRentPopUpPhone' type='text' placeholder="+7___ ___-____">
+            <input type='email' placeholder="E-mail" id='giveRentPopUpEmail'>
+
+            <input class='submitButton' type='submit' value='Оставить заявку'>
+            <input class='ninjaInput' type='text' value='Сдать Недвижимость'>
+          </form>
+
+          <div class='giveRentFormSucсess' id='giveRentPopUpFormSucсess'>
+            <h1>Спасибо<br> за заявку!</h1>
+            <p>Вскором времени менеджер свяжется с Вами!</p>
+            <button class='refreshButton' onclick="formRefresh();">обновить</button>
+          </div>
+
+          <div class='giveRentFormFail' id='giveRentPopUpFormFail'>
+            <h1>Произошла<br> ошибка :(</h1>
+            <p>Попробуйте еще раз.</p>
+            <button class='refreshButton' onclick="formRefresh();">обновить</button>
+          </div>
+
+        </div>  
+      </div>
+    </div>
+
+    <div class='takeRentPopUp' id='takeRentPopUp'>
+      <div class='height_148px'></div>
+      <div class='formWrapper'>
+        <div class='closeFromButton' id='closeFromButton' onclick="closeTakeFormButton()">
+          <div class='closeLineBefore'></div>
+          <div class='closeLineAfter'></div>
+        </div>
+        <h4>Снять недвижимость</h4>
+        <div class='formWrap'>
+          <form id='takeRentPopUpForm'>
+            <h6>Информация о недвижимости</h6>              
+            <select id='takeRentPopUpSelect'>
+              <option>Выберите тип</option>
+              <option>Комната</option>
+              <option>Квартира</option>              
+            </select>
+
+            <input type='text' placeholder='Район' id='takeRentPopUpAdress'>
+
+            <h6 class='personalInformH'>Личная информация</h6>
+            <input id='takeRentPopUpPhone' type='text' placeholder="+7___ ___-____">
+            <input type='email' placeholder="E-mail" id='takeRentPopUpEmail'>
+
+            <input class='submitButton' type='submit' value='Оставить заявку'>
+            <input class='ninjaInput' type='text' value='Снять Недвижимость'>
+          </form>
+
+          <div class='giveRentFormSucсess' id='takeRentPopUpFormSucсess'>
+            <h1>Спасибо<br> за заявку!</h1>
+            <p>Вскором времени менеджер свяжется с Вами!</p>
+            <button class='refreshButton' onclick="formRefresh();">обновить</button>
+          </div>
+
+          <div class='giveRentFormFail' id='takeRentPopUpFormFail'>
+            <h1>Произошла<br> ошибка :(</h1>
+            <p>Попробуйте еще раз.</p>
+            <button class='refreshButton' onclick="formRefresh();">обновить</button>
+          </div>
+
+        </div>  
+      </div>
+    </div>
+
+    <div class='height_148px'>      
+    </div>
+
+    <div class='formBlock' id='formBlock'>
+      <div class='content_1030'>
+        <div class='row'>
+          <div class='col-0 col-sm-0 col-md-0 col-lg-6 col-xl-6'>
+            <div class="tabs">
+             <div class="tab tabOne">
+              <input type="radio" id="tab_1" name="tabGroup" checked>
+              <label for="tab_1" class="tabTitle">СДАТЬ</label> 
+              <section class="tabContent tabContentOne">
+                <div class='formWrap'>
+                  <div class='yellowLine'></div>
+                  <form id='giveRentForm' class='giveRentForm' method='post' action='#'>
+                    <h6>Информация о недвижимости</h6>              
+                      <select id='giveRentSelect'>
+                        <option>Выберите тип</option>
+                        <option>Комната</option>
+                        <option>Квартира</option>
+                        <option>Мини-отель</option>
+                      </select>
+
+                      <input type='text' placeholder='Адрес недвижимости' id='giveRentAdress'>
+
+                      <h6>Личная информация</h6>
+                      <input class='personalInfo' id='giveRentPhone' type='text' placeholder="+7___ ___-____">
+                      <input class='personalInfo personalInfoEmail' id='giveRentEmail' type='email' placeholder="E-mail">
+
+                      <input class='submitButton' type='submit' value='Оставить заявку'>
+                      <input class='ninjaInput' type='text' value='Сдать Недвижимость'>                                 
+                  </form>
+
+                  <div class='giveRentFormSucсess' id='giveRentFormSucсess'>
+                    <h1>Спасибо<br> за заявку!</h1>
+                    <p>Вскором времени менеджер свяжется с Вами!</p>
+                    <button class='refreshButton' onclick="formRefresh();">обновить</button>
+                  </div>
+
+                  <div class='giveRentFormFail' id='giveRentFormFail'>
+                    <h1>Произошла<br> ошибка :(</h1>
+                    <p>Попробуйте еще раз.</p>
+                    <button class='refreshButton' onclick="formRefresh();">обновить</button>
+                  </div>
+                </div>                       
+              </section>
+             </div> 
+             <div class="tab tabTwo">
+              <input type="radio" id="tab_2" name="tabGroup">
+              <label for="tab_2" class="tabTitle">СНЯТЬ</label> 
+              <section class="tabContent tabContentTwo">
+                <div class='formWrap'>
+                <div class='yellowLine'></div>
+                  <form id= 'takeRentForm' class='takeRentForm' method='post' action='#'>
+                    <h6>Информация о недвижимости</h6>              
+                      <select id='takeRentSelect'>
+                        <option>Выберите тип</option>
+                        <option>Комната</option>
+                        <option>Квартира</option>                        
+                      </select>
+
+                      <input type='text' placeholder='Район' id='takeRentAdress'>
+
+                      <h6>Личная информация</h6>
+                      <input class='personalInfo' id='takeRentPhone' type='text' placeholder="+7___ ___-____">
+                      <input class='personalInfo personalInfoEmail' id='takeRentEmail' type='email' placeholder="E-mail">
+
+                      <input class='submitButton' type='submit' value='Оставить заявку'>
+                      <input class='ninjaInput' type='text' value='Снять Недвижимость'>             
+                  </form>
+                  <div class='takeRentFormSucсess' id='takeRentFormSucсess'>
+                    <h1>Спасибо<br> за заявку!</h1>
+                    <p>Вскором времени менеджер свяжется с Вами!</p>
+                    <button class='refreshButton' onclick="formRefresh();">обновить</button>
+                  </div>
+
+                  <div class='takeRentFormFail' id='takeRentFormFail'>
+                    <h1>Произошла<br> ошибка :(</h1>
+                    <p>Попробуйте еще раз.</p>
+                    <button class='refreshButton' onclick="formRefresh();">обновить</button>
+                  </div>
+                </div>
+              </section>
+             </div>         
+            </div>
+          </div>
+          <div class='col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 flexyNAlignCent'>
+            <h1>Эффективное управление Вашей недвижимостью</h1>
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <div class='cardsBlock' id='cardsBlock'>
+      <div class='content_1030'>
+        <div class='cards'>
+           <div class='row'>
+             <div class='col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4'>
+               <div class='theCard firstCard'>
+                <div class='yellowBlock width_55perc'></div>
+                 <h5>Управляем</h5>
+                 <p>Подписка на сервис Renty.me стоит от 5% от ежемесячной стоимости аренды</p>
+                 <div class='about'>
+                   <a href='#aboutUs'><p>Подробнее</p>
+                   <img src='img/arrow_left.svg'></a>
+                 </div>
+               </div>
+             </div>
+
+             <div class='col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4'>
+               <div class='theCard secondCard'>
+                <div class='yellowBlock width_75perc'></div>
+                 <h5>Консультируем</h5>
+                 <p>Мы знаем как тяжело найти нужную информацию, поэтому консультурем Вас бесплатно</p>
+                 <div class='about'>
+                   <a href='#weConsult'><p>Подробнее</p>
+                   <img src='img/arrow_left.svg'></a>
+                 </div>
+               </div>
+             </div>
+
+             <div class='col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4'>
+               <div class='theCard thirdCard'>
+                <div class='yellowBlock width_49perc'></div>
+                <div class='anotherYellowBlock width_75perc'></div>               
+                <h5 class='thirdCardH5'>Помогаем<br> с оформлением</h5>
+                <p class='thirdCardP'>Поможем Вам открыть ИП или стать самозанятым</p>                 
+                <div class='about thirdCardAboutFirst'>
+                   <a href='#helpWithPapers'><p>Подробнее</p>
+                   <img src='img/arrow_left.svg'></a>
+                </div>                
+               </div>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='aboutUs' id='aboutUs'>
+      <div class='content_1030'>
+        <h1>О нас</h1>
+        <div class='flexyAndBetween marBot_120 aboutUsDownloadBlock'>
+          <p>Компания «Ренти Ми» —  это сервис<br> по управлению арендой недвижимости</p>
+          <a href='#'><div class='downloadAnchor flexyAndBetween flexyNAlignCent'>
+            <img src='img/files.svg'>
+            <p>Скачать медиа-кит</p>
+            <span>456 кв</span>
+          </div></a>
+        </div>
+        <div class='row justify-content-between'>
+            <div class='col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4'>
+              <div class='stepsCard'>
+                <div class='circle'>
+                  <h3>1</h3>
+                </div>
+                <div class='stepsCardContent'>
+                  <h4>До сдачи</h4>
+                  <p>Проводим аналитику, согласовываем договор</p>
+                  <button class='submitButton' onclick="faderPopUp();">Оставить заявку</button>
+
+                  <div class='fader' id='fader'>
+                    <div class='formWrap'>
+                      <div class='closeFromButton' id='closeBeforeRentForm' onclick="closeBeforeRentFormButton()">
+                        <div class='closeLineBefore'></div>
+                        <div class='closeLineAfter'></div>
+                      </div>
+                      <form class='beforeRentForm' id='beforeRentForm'>
+                        <h1>Оставьте заявку на сдачу, мы Вам перезвоним</h1>
+                        <p>Подписка на сервис Renty.me стоит от 5% от ежемесячной стоимости аренды. Управление мини-отелями обсуждается в индивидуальном порядке.</p>
+                        <input type='text' id='beforeRentPhone' placeholder="+7___ ___-____">
+                        <input type='submit' class='beforeRentSubmit' value="оставить заявку">
+                        <div class='flex'>
+                          <input id='check_2' class='requestCheckbox' type="checkbox">
+                          <label for='check_2' id='questionLabel_2'>Согласие на обработку персональных данных</label>
+                        </div>
+                      </form>
+
+                      <div class='giveRentFormSucсess' id='beforeRentFormSucсess'>
+                        <h1>Спасибо<br> за заявку!</h1>
+                        <p>Вскором времени менеджер свяжется с Вами!</p>
+                        <button class='refreshButton' onclick="formRefresh();">обновить</button>
+                      </div>
+
+                      <div class='giveRentFormFail' id='beforeRentFormFail'>
+                        <h1>Произошла<br> ошибка :(</h1>
+                        <p>Попробуйте еще раз.</p>
+                        <button class='refreshButton' onclick="formRefresh();">обновить</button>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                </div> 
+              </div>
+            </div>
+
+            <div class='col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4'>
+              <div class='stepsCard'>
+                <div class='circleContainer'>
+                  <div class='yellowStrip'></div>
+                  <div class='circle'>
+                    <h3>2</h3>
+                  </div>
+                </div>
+                <div class='stepsCardContent'>
+                  <h4>Процесс<br>сдачи</h4>
+                  <p>Делаем мелкий ремонт, убираемся, фотографируем квартиру, <br>продвигаем через платные рекламные платформы и собственную базу, проверяем жильцов <br>на кредиторскую задолженность </p>                  
+                </div> 
+              </div>
+            </div>
+
+            <div class='col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4'>
+              <div class='stepsCard'>
+                <div class='circleContainer'>
+                  <div class='yellowStrip'></div>
+                  <div class='circle'>
+                    <h3>3</h3>
+                  </div>
+                </div>
+                <div class='stepsCardContent'>
+                  <h4>Сопровождение <br>во время аренды</h4>
+                  <p>Страхуем Вашу недвижимость, делаем фотоотчет раз в квартал, контролируем своевременную оплату коммунальных платежей, помогаем арендаторам совместно с городской службой сервиса GORSERV</p>
+                  <img src='img/logoGorserv.png'>
+                  <a class='catalogueButton' href='catalogue.html'><button>каталог услуг</button></a>                  
+                </div> 
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class='adaptiveYellowStrip'>        
+          <div class='blackStrip' id='blackStrip'></div>        
+      </div>
+    </div>
+
+    <div class='weConsult' id='weConsult'>
+      <div class='content_1030'>
+        <h1>Консультируем</h1>
+        <div class='row justify-content-between'>
+          <div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
+            <a href='#'><div class='faqCard'>
+              <div class='faq'>
+                <p>Как сдать квартиру в аренду?</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+
+            <a href='#'><div class='faqCard'>
+              <div class='faq'>
+                <p>Можно ли сдать квартиру, если она в ипотеке?</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+
+            <a href='#'><div class='faqCard'>
+              <div class='faq'>
+                <p>Про временную регистрацию</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+
+            <a href='#'><div class='faqCard'>
+              <div class='faq'>
+                <p>Как снять квартиру в аренду?</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+
+            <a href='#'><div class='faqCard bordBot'>
+              <div class='faq'>
+                <p>Что выгоднее: ипотека или снимать квартиру?</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+          </div>
+
+          <div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
+            <a href='#'><div class='faqCard'>
+              <div class='faq'>
+                <p>Про налоги</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+
+            <a href='#'><div class='faqCard'>
+              <div class='faq '>
+                <p class='marbot'>С чем сталкиваются собственники при сдаче недвижимости?</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+
+            <a href='#'><div class='faqCard'>
+              <div class='faq'>
+                <p>Что такое доверительное управление?</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+
+            <a href='#'><div class='faqCard'>
+              <div class='faq'>
+                <p>С чем сталкиваются арендаторы?</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+
+            <a href='#'><div class='faqCard bordBot'>
+              <div class='faq'>
+                <p>Мошенники в аренде</p>
+                <div class='plusCircle'>
+                  <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 84 84" style="enable-background:new 0 0 84 84;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <rect x="35.5" width="13" height="84"/>
+                      </g>
+                      <g>
+                        <rect y="35.5" width="84" height="13"/>
+                      </g>
+                    </g>
+                  </svg>
+                </div>              
+              </div>
+              <span>Читать на eee.rty.ru</span>
+            </div></a>
+          </div>
+        </div>
+      </div>
+      <div class='content_1230'>
+        <div class='content_1030 posRel noPad'>
+          <div class='questionFormSucсess' id='questionFormSucсess'>
+            <h1>Спасибо<br> за заявку!</h1>
+            <p>Вскором времени менеджер свяжется с Вами!</p>
+            <button class='refreshButton' onclick="formRefresh();">обновить</button>
+          </div>
+
+          <div class='questionFormFail' id='questionFormFail'>
+            <h1>Произошла<br> ошибка :(</h1>
+            <p>Попробуйте еще раз.</p>
+            <button class='refreshButton' onclick="formRefresh();">обновить</button>
+          </div>
+        </div>
+        <div class='questionFormBlock'>
+          <div class='content_1030'>
+            <div class='formWrap'>
+              <h1>Остались вопросы?</h1>
+              <form id='questionForm'>
+                <input type='text' placeholder="Ваш вопрос" class='questionInput' id='questionInput'>
+                <input type='text' id='questionPhone' placeholder="+7___ ___-____" class='phoneInput'>
+                <input type='email' placeholder="E-mail" class='emailInput' id='questionEmail'>
+                <input type='submit' value='Задать вопрос' class='questionSubmit'>
+                <div class='checkboxHolder'>
+                  <input type="checkbox" class='checkbox' id='checkbox_1'>
+                  <label for='checkbox_1' id='questionLabel'>Согласие на обработку персональных данных</label>
+                </div>
+              </form>              
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='weHelpWithPapers' id='helpWithPapers'>
+      <div class='content_1030'>
+        <h1>Помогаем <br>с оформлением</h1>
+          <div class='row justify-content-between'>
+            <div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
+              <div class='helpWithPapersCard'>
+                <div class='yellowBlockAgain width_46perc'></div>
+                <h4>Открыть ИП</h4>
+                <p>совместно с Тинькофф</p>
+                <img class='tinkoffAndFNSlogo' src='img/tinkoffLogo.svg'>
+                <ul>
+                  <li><span>Бесплатная регистрация <br>и бухгалтерия</span></li>
+                  <li><span>Упрощенная система налогообложения</span></li>
+                  <li><span>Страховые и пенсионные взносы</span></li>
+                  <li><span>Официальный доход</span></li>
+                  <li><span>Своевременная отправка деклараций</span></li>
+                  <li><span>6 месяцев бесплатного обслуживания <br>расчетного счета</span></li>
+                  <li><span>Круглосуточная техподдержка</span></li>
+                  <li><span>Не нужно посещать налоговую, <br>мы все сделаем за Вас.</span></li>
+                </ul>
+                <div class='formWrap'>
+                  <form class='tinkoffForm' id='tinkoffForm'>
+                    <input type='text' placeholder="Ваше ФИО" id='tinkoffName'>
+                    <input type='text' placeholder="+7___ ___-____" id='tinkoffPhone'>
+                    <input type='submit' class='tinkoffSubmit' value='стать ип'>
+                  </form>
+                  <div class='tinkoffFormSucсess' id='tinkoffFormSucсess'>
+                    <h1>Спасибо<br> за заявку!</h1>
+                    <p>Вскором времени менеджер свяжется с Вами!</p>
+                    <button class='refreshButton' onclick="formRefresh();">обновить</button>
+                  </div>
+
+                  <div class='tinkoffFormFail' id='tinkoffFormFail'>
+                    <h1>Произошла<br> ошибка :(</h1>
+                    <p>Попробуйте еще раз.</p>
+                    <button class='refreshButton' onclick="formRefresh();">обновить</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
+              <div class='helpWithPapersCard flRight'>
+                <div class='yellowBlockAgain width_74perc'></div>
+                <h4>Стать самозанятым</h4>                
+                <img class='tinkoffAndFNSlogo FNSLogo' src='img/FNSLogo.svg' class='FNSLogo'>
+                <ul>
+                  <li><span>Минимальный процент налога</span></li>
+                  <li><span>Официальный доход</span></li>
+                  <li><span>Легко открыть и закрыть</span></li>
+                  <li><span>Вам никуда не нужно ехать, <br>все можно сделать онлайн </span></li>
+                </ul>
+                <a href='http://www.yandex.ru'><div class='weHelpWithPapersAnchor'>
+                  <p>www.nalog.ru</p>                  
+                  <img class='arrowLeft' src='img/arrow_left.svg'>                  
+                </div></a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class='articlesAboutUs' id='articlesAboutUs'>
+      <div class='content_1030'>
+        <h1>О нас пишут</h1>
+        <div class='row'>
+          <div class='col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 flexyNAlignCent'>
+            <a href='#'><img class='vcLogo' img src='img/vcRuLogo.svg'></a>
+          </div>
+
+          <div class='col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 flexyAndCenter'>
+            <a href='#'><img src='img/broDudeLogo.svg'></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <a href=#><button class='msg'>
+      <div class='alarm'></div>
+      Сообщение
+    </button></a>
+
+    <footer>
+      <div class='content_1030'>
+        <div class='row justify-content-between'>
+          <div class='col-12 col-sm-12 col-md-12 col-lg-auto col-xl-auto flexyNAlignCent'>
+            <div>            
+              <div><a href='#'>Пользовательское соглашение</a></div>
+              <div><a href='#'>Защита персональной информации</a></div>
+            </div>            
+          </div>
+
+          <div class='col-12 col-sm-12 col-md-12 col-lg-auto col-xl-auto flexyNAlignCent'>
+            <p>Ренти Ми — это весь жизненный цикл аренды, включая<br>
+              подготовку жилья, администрирование коммунальных<br>
+              платежей, решение мелких вопросов, контроль состояния<br>
+              квартиры и своевременности платежей.</p>
+          </div>
+
+          <div class='col-12 col-sm-12 col-md-12 col-lg-auto col-xl-auto flexyNAlignCent'>
+            <div class='flRight'>
+              <p>ООО "Ренти Ми"<br>
+                ИНН 7731399577<br>
+                ОГРН 1187746229978<br>
+                КПП 773101001</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!--form refresh-->
+    <script src='js/formRefreshMain.js'></script>
+
+
+    <!--jQuery for ajax (not slim)-->
+    <script src=js/jQueryLib.js></script>
+
+    <!--Ajax Sripts-->
+    <script src='ajax/ajax.js'></script>
+
+    <!--Animation Scripts-->
+    <script src='js/animations.js'></script>
+
+    <!--Scroll Animation-->
+    <script src='js/scrollAnimationsMain.js'></script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
